@@ -25,7 +25,7 @@ class PostRequest extends FormRequest
     {
         $rules = [
             $rules['title'] = 'required|unique:posts|min:3|max:100',
-            'except' => 'required|min:100|max:200',
+            'except' => 'required|min:1|max:200',
             'body' => 'required',
             'image' => 'mimes:jpeg,png|max:5000',
         ];

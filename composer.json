@@ -16,9 +16,11 @@
         "laravel-lang/lang": "~7.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.3"
+        "livewire/livewire": "^2.3",
+        "te7a-houdini/laravel-trix": "^2.0"
     },
     "require-dev": {
+        "buzzylab/laradown": "~0.2",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/ui": "^3.1",

@@ -19,8 +19,6 @@ class Post extends Model
         'author_id',
         'title',
         'except',
-        'image',
-        'thumb',
         'body',
     ];
     /**

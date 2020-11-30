@@ -21,5 +21,5 @@ Route::resource('post', 'PostController')->names('post');
 Route::get('search', 'PostController@search')->name('post.search');
 //Route::get('post/index', 'PostController@index')->name('post.index');
 //Route::get('post/search', 'PostController@search')->name('post.search');
-Route::middleware('auth');
+//Route::middleware('auth');
 Auth::routes();

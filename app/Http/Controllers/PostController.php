@@ -16,12 +16,6 @@ use Intervention\Image\Facades\Image;
 
 class PostController extends Controller
 {
-    public function __construct()
-    {
-        // не аутентифицированные пользователи могут только просматривать
-        $this->middleware('auth')->except('index', 'show', 'search');
-    }
-
     /**
      * @param Request $request
      * @return Application|Factory|View
@@ -121,20 +115,18 @@ class PostController extends Controller
         if (is_null($post)) {
             abort(404);
         }
-        if (Auth::id() != $post->id) {
-            return redirect()->back()->withErrors('У вас нет прав на это действие');
-        }
+
         return view('posts.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param PostRequest $request
+     * @param Request $request
      * @param int $id
      * @return RedirectResponse
      */
-    public function update(PostRequest $request, int $id)
+    public function update(Request $request, int $id)
     {
         $post = Post::query()->findOrFail($id);
         if (is_null($post)) {
@@ -178,10 +170,10 @@ class PostController extends Controller
     }
 
     /**
-     * @param PostRequest $request
+     * @param Request $request
      * @param Post $post
      */
-    private function uploadImage(PostRequest $request, Post $post)
+    private function uploadImage(Request $request, Post $post)
     {
         $source = $request->file('image');
         if ($source) {

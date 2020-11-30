@@ -8,6 +8,7 @@
     <title>{{ $title ?? 'Веб-разработка' }}</title>
     <link rel="shortcat icon" type="image/png" href="{{ asset('favicon.png') }}"/>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    @trixassets
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>

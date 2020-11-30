@@ -15,7 +15,7 @@
                     <span class="float-left">
                         Автор: {{$post->author}}
                         <br>
-                        Дата: {{ date_format($post->created_at,'d.m.Y H:i') }}
+                        Дата: {{ $post->created_at? \Carbon\Carbon::parse($post->created_at)->format('d.m.Y H:i'):'' }}
                     </span>
                         @auth <!-- Только зарегестрированные пользователь могут редактировать и удалять посты -->
                             @if(auth()->id() == $post->author_id || auth()->id() == 1)<!-- Причем только свои -->

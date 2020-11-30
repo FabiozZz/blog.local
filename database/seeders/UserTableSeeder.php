@@ -22,6 +22,7 @@ class UserTableSeeder extends Seeder
                 'password' => bcrypt('admin')
             ]
         ];
+
         DB::table('users')->insert($data);
         User::factory()->count(4)->create();
         //
